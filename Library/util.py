@@ -8,6 +8,31 @@ websites = "[.](com|net|org|io|gov|edu|me)"
 digits = "([0-9])"
 multiple_dots = r'\.{2,}'
 
+
+def import_file(string1,string2,sep,split):
+  data=pd.read_csv(string1,sep=sep)
+  df_rule=pd.DataFrame()
+  df_rule['hotel_rule']=data['hotel_rule']
+  for i in range(len(df_rule['hotel_rule'])):
+    df_rule['hotel_rule'][i]=df_rule['hotel_rule'][i].replace("\n"," ")
+
+  #Import QA dataset
+
+  list_rule1=[]
+
+  for i in range(len(df_rule['hotel_rule'])):
+
+    list_rule1.append(df_rule['hotel_rule'][i].split(split))
+
+
+
+  df_qa=pd.read_csv(string2,sep=sep)
+
+  return df_qa,df_rule
+
+
+
+
 def split_into_sentences(text: str) -> list[str]:
     """
     Split the text into sentences.
