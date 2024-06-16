@@ -29,7 +29,7 @@ def import_file(string1,string2,sep,split):
 
   df_qa=pd.read_csv(string2,sep=sep)
 
-  return df_qa,df_rule,list_rule
+  return df_qa,df_rule,list_rule1
 
 
 
