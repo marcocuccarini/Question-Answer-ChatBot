@@ -7,6 +7,7 @@ acronyms = "([A-Z][.][A-Z][.](?:[A-Z][.])?)"
 websites = "[.](com|net|org|io|gov|edu|me)"
 digits = "([0-9])"
 multiple_dots = r'\.{2,}'
+import pandas as pd
 
 
 def import_file(string1,string2,sep,split):
