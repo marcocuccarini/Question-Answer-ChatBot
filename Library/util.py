@@ -10,8 +10,8 @@ multiple_dots = r'\.{2,}'
 import pandas as pd
 
 
-def import_file(string1,string2,sep,split):
-  data=pd.read_csv(string1,sep=sep)
+def import_file(string1,string2,sep1,sep2,split):
+  data=pd.read_csv(string1,sep=sep1)
   df_rule=pd.DataFrame()
   df_rule['hotel_rule']=data['hotel_rule']
   for i in range(len(df_rule['hotel_rule'])):
@@ -27,7 +27,7 @@ def import_file(string1,string2,sep,split):
 
 
 
-  df_qa=pd.read_csv(string2,sep=sep)
+  df_qa=pd.read_csv(string2,sep=sep2)
 
   return df_qa,df_rule,list_rule1
 
